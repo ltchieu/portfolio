@@ -64,7 +64,7 @@ Feel free to reach out to me!
 
 - **GitHub**: [ltchieu](https://github.com/ltchieu)
 - **LinkedIn**: [Lê Trương Công Hiếu](https://www.linkedin.com/in/letruongconghieu/)
-- **Email**: [ltchieu04@gmail.com](mailto:ltchieu04@gmail.com)
+- **Email**: [ltchieu04@gmail.com](mailto:lch3504@gmail.com)
 
 ---
 *Built with ❤️ by Lê Trương Công Hiếu*
