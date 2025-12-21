@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Home from "../page/Home";
 import About from "../page/About";
+import Projects from "../page/Projects";
 import Resume from "../page/Resume";
 
 const AppRoute = () => {
@@ -11,9 +12,8 @@ const AppRoute = () => {
       <Route element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="projects" element={<div>Projects Page (Coming Soon)</div>} />
+        <Route path="projects" element={<Projects />} />
         <Route path="resume" element={<Resume />} />
-        <Route path="blogs" element={<div>Blogs Page (Coming Soon)</div>} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

@@ -78,6 +78,14 @@ const GithubActivityCalendar = ({ username = DEFAULT_USERNAME }: Props) => {
         display: 'flex',
         justifyContent: 'center',
         width: '100%',
+        paddingTop: 8,
+        paddingBottom: 8,
+        // scale up the calendar for a larger appearance
+        '& .react-activity-calendar': {
+          transform: 'scale(1.35)',
+          transformOrigin: 'center top',
+          maxWidth: 980,
+        },
         '& .react-activity-calendar__footer': {
           fontFamily: '"PT Mono", monospace',
           color: 'rgba(255,255,255,0.85)',
@@ -96,17 +104,17 @@ const GithubActivityCalendar = ({ username = DEFAULT_USERNAME }: Props) => {
       <ActivityCalendar
         data={data}
         loading={loading}
-        colorScheme="dark"
+        colorScheme="light"
         labels={{
           totalCount: '{{count}} contributions in the last year',
           legend: { less: 'Less', more: 'More' },
         }}
         theme={{
-          dark: [
-            'rgba(255,255,255,0.16)',
-            'rgba(199,112,240,0.28)',
-            'rgba(199,112,240,0.46)',
-            'rgba(199,112,240,0.72)',
+          light: [
+            '#ffffff',
+            'rgba(199,112,240,0.20)',
+            'rgba(199,112,240,0.38)',
+            'rgba(199,112,240,0.62)',
             '#c770f0',
           ],
         }}

@@ -85,7 +85,7 @@ const Home = () => {
             </Typography>
 
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 3 }}>
-              <TypeWriter phrases={['Software Developer', 'Lê Trương Công Hiếu']} />
+              <TypeWriter phrases={['Software Developer', 'Knowledge is power.']} />
             </Box>
 
             <style>
@@ -162,19 +162,35 @@ const Home = () => {
                 textAlign: { xs: 'center', md: 'left' },
               }}
             >
-              I'm a Software Engineer who loves transforming ideas into reliable, scalable products. Over time,
-              I've explored different technologies and found my passion in building high-performance systems
-              and intuitive user experiences.
+              I am a responsible, sociable, and proactive individual in my work, always ready to
+              learn new knowledge. Through several academic projects, I have gained experience in
+              teamwork and specialized knowledge in{' '}
+              <Box component="span" sx={highlightSx}>
+                Back-End Development
+              </Box>
+              .
               <br />
               <br />
-              I'm proficient in <Box component="span" sx={highlightSx}>JavaScript</Box>,{' '}
-              <Box component="span" sx={highlightSx}>TypeScript</Box>, and modern frameworks like{' '}
-              <Box component="span" sx={highlightSx}>React</Box>.
+              I have hands-on experience with{' '}
+              <Box component="span" sx={highlightSx}>
+                Java
+              </Box>{' '}
+              and{' '}
+              <Box component="span" sx={highlightSx}>
+                C#/.NET
+              </Box>
+              .
               <br />
               <br />
-              My key areas of interest include developing{' '}
-              <Box component="span" sx={highlightSx}>Web Applications</Box>, learning system design,
-              and continuously improving performance and UX.
+              In the next 1-3 years, my goal is to become a professional{' '}
+              <Box component="span" sx={highlightSx}>
+                Back-End Developer
+              </Box>
+              , proficient in building{' '}
+              <Box component="span" sx={highlightSx}>
+                complex data management systems
+              </Box>{' '}
+              and effectively optimizing processing performance.
             </Typography>
 
           </Grid>

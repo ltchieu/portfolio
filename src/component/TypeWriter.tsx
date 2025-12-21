@@ -45,7 +45,7 @@ const TypeWriter = ({ phrases, variant = 'h3' }: TypeWriterProps) => {
       sx={{
         color: '#c770f0',
         fontWeight: 700,
-        fontFamily: '"Poppins", sans-serif',
+        fontFamily: '"PT Mono", monospace',
         fontSize: { xs: '2rem', md: '2.5rem' },
       }}
     >
@@ -56,7 +56,6 @@ const TypeWriter = ({ phrases, variant = 'h3' }: TypeWriterProps) => {
           animation: 'blink 0.7s infinite',
         }}
       >
-        |
       </span>
       <style>
         {`

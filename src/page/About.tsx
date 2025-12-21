@@ -22,6 +22,7 @@ import postmanIcon from '../assets/icon/postman.svg';
 import vscodeIcon from '../assets/icon/visual-studio-code-1.svg';
 import intellijIcon from '../assets/icon/intellij-idea-1.svg';
 import visualStudioIcon from '../assets/icon/visual-studio-2013.svg';
+import aboutImg from '../assets/img/about.png';
 import Pill from '../component/Pill';
 import GithubActivityCalendar from '../component/GithubActivityCalendar';
 
@@ -59,7 +60,7 @@ const TOOLS_I_USE: IconItem[] = [
 const About = () => {
   const hobbies = [
     'Playing Games',
-    'Writing Tech Blogs',
+    'Play guitar and sing',
     'Traveling and Exploring New Places',
   ];
 
@@ -83,7 +84,7 @@ const About = () => {
         }}
       >
         <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 8 }}>
+          <Grid size={{ xs: 12, md: 7 }}>
             <Typography
               sx={{
                 fontFamily: '"PT Mono", monospace',
@@ -106,16 +107,34 @@ const About = () => {
                 textAlign: { xs: 'center', md: 'left' },
               }}
             >
-              Hi everyone! I&apos;m{' '}
-              <Box component="span" sx={{ color: '#c770f0' }}>Lê Trương Công Hiếu</Box>.
+              Hi Everyone, I am <span style={{ color: '#c770f0' }}> Lê Trương Công Hiếu</span>.
               <br />
-              I enjoy building web applications and learning system design.
+              I am a responsible and sociable developer who thrives in teamwork and continuous learning.
               <br />
-              I love working with{' '}
+              My primary focus is{' '}
               <Box component="span" sx={{ color: '#c770f0', fontWeight: 700, fontStyle: 'italic' }}>
-                JavaScript, TypeScript, React
+                Back-End Development
+              </Box>
+              , where I enjoy building complex, high-performance systems using{' '}
+              <Box component="span" sx={{ color: '#c770f0', fontWeight: 700, fontStyle: 'italic' }}>
+                Java
               </Box>{' '}
-              and modern tooling.
+              and{' '}
+              <Box component="span" sx={{ color: '#c770f0', fontWeight: 700, fontStyle: 'italic' }}>
+                C#/.NET
+              </Box>
+              .
+              <br />
+              <br />
+              I also have experience creating responsive front-end interfaces with{' '}
+              <Box component="span" sx={{ color: '#c770f0', fontWeight: 700, fontStyle: 'italic' }}>
+                React
+              </Box>{' '}
+              and{' '}
+              <Box component="span" sx={{ color: '#c770f0', fontWeight: 700, fontStyle: 'italic' }}>
+                TypeScript
+              </Box>
+              .
               <br />
               <br />
               Outside of coding, I love engaging in activities that keep me creative and inspired:
@@ -164,7 +183,7 @@ const About = () => {
                 fontSize: { xs: '1rem', md: '1.1rem' },
               }}
             >
-              “Strive to build things that make a difference!”
+              “If you are working on something that you really care about, you don’t have to be pushed. The vision pulls you.”
             </Typography>
             <Typography
               sx={{
@@ -175,11 +194,11 @@ const About = () => {
                 fontSize: { xs: '0.95rem', md: '1.05rem' },
               }}
             >
-              — Hieu
+              — Steve Jobs
             </Typography>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 4 }}>
+          <Grid size={{ xs: 12, md: 5 }}>
             <Box
               sx={{
                 display: 'flex',
@@ -189,7 +208,7 @@ const About = () => {
             >
               <Box
                 component="img"
-                src="https://undraw.co/api/illustrations/7a55cc8c-7dd5-4b37-9c4a-4e1e2c1fda47"
+                src={aboutImg}
                 alt="about illustration"
                 sx={{
                   maxWidth: { xs: '80%', md: '100%' },
@@ -256,7 +275,7 @@ const About = () => {
             ))}
           </Box>
         </Box>
-        
+
         <Box sx={{ mt: { xs: 10, md: 12 } }}>
           <Typography
             sx={{

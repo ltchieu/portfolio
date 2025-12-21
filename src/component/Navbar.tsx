@@ -16,7 +16,6 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useMatch, useNavigate } from 'react-router-dom';
 import { useMemo, useState } from 'react';
@@ -26,7 +25,6 @@ const NAV_ITEMS = [
   { label: 'About', path: '/about', icon: <PersonOutlineIcon /> },
   { label: 'Projects', path: '/projects', icon: <WorkOutlineIcon /> },
   { label: 'Resume', path: '/resume', icon: <DescriptionOutlinedIcon /> },
-  { label: 'Blogs', path: '/blogs', icon: <ArticleOutlinedIcon /> },
 ];
 
 type NavItem = (typeof NAV_ITEMS)[number];
@@ -124,7 +122,7 @@ const Navbar = () => {
             textDecoration: 'none',
           }}
         >
-          Sb.
+          Hieu.
         </Box>
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 1, md: 3 } }}>
