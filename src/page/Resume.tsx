@@ -5,7 +5,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import DownloadIcon from '@mui/icons-material/Download';
 
-const pdfUrl = '/src/assets/file/CV%20-%20Le%20Truong%20Cong%20Hieu%20-%20Intern%20Developer.pdf';
+import pdfUrl from '../assets/file/CV - Le Truong Cong Hieu - Intern Developer.pdf';
 
 const Resume = () => {
   const defaultLayout = defaultLayoutPlugin();
