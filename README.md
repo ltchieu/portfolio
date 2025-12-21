@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built to showcase my skills as a Software Engineer, specializing in Back-End Development (Java, C#/.NET). This project highlights my professional journey, projects, and technical expertise.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern UI/UX**: Clean, dark-themed design with smooth animations and transitions.
+- **Responsive Layout**: Fully optimized for desktop, tablet, and mobile devices using Material UI Grid v2.
+- **Interactive Elements**:
+    - **TypeWriter Effect**: Dynamic text introduction.
+    - **Tilt Effect**: Interactive 3D tilt on images.
+    - **Hover Effects**: Premium glow effects on project cards.
+- **Project Showcase**: Grid layout displaying recent projects with GitHub and Demo links.
+- **About Section**: Detailed professional summary and hobbies.
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: [React](https://react.dev/) (v19)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **UI Library**: [Material UI (MUI)](https://mui.com/) (v7)
+- **Routing**: [React Router](https://reactrouter.com/) (v7)
+- **Icons**: MUI Icons, React Icons
+- **PDF Viewer**: React PDF Viewer (for CV display)
 
-## Expanding the ESLint configuration
+## 📦 Installation & Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/ltchieu/portfolio.git
+    cd portfolio
+    ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
+
+## 📂 Project Structure
+
+```
+src/
+├── assets/         # Images, icons, and static files
+├── component/      # Reusable UI components (Navbar, TypeWriter, etc.)
+├── layout/         # Layout wrappers
+├── page/           # Main pages (Home, About, Projects, Resume)
+├── route/          # App routing configuration
+└── App.tsx         # Main application entry
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📬 Contact
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Feel free to reach out to me!
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **GitHub**: [ltchieu](https://github.com/ltchieu)
+- **LinkedIn**: [Lê Trương Công Hiếu](https://www.linkedin.com/in/letruongconghieu/)
+- **Email**: [ltchieu04@gmail.com](mailto:ltchieu04@gmail.com)
+
+---
+*Built with ❤️ by Lê Trương Công Hiếu*
