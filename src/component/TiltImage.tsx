@@ -19,8 +19,8 @@ const TiltImage = ({ src, alt, size = { xs: 220, md: 300 }, maxTilt = 12 }: Tilt
     if (!el) return;
 
     const rect = el.getBoundingClientRect();
-    const px = (event.clientX - rect.left) / rect.width; // 0..1
-    const py = (event.clientY - rect.top) / rect.height; // 0..1
+    const px = (event.clientX - rect.left) / rect.width;
+    const py = (event.clientY - rect.top) / rect.height;
 
     const rotateY = (px - 0.5) * (maxTilt * 2);
     const rotateX = -(py - 0.5) * (maxTilt * 2);
@@ -46,8 +46,9 @@ const TiltImage = ({ src, alt, size = { xs: 220, md: 300 }, maxTilt = 12 }: Tilt
       }}
       onMouseMove={handleMove}
       sx={{
-        display: 'grid',
-        placeItems: 'center',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         perspective: '900px',
       }}
     >

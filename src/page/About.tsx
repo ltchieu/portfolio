@@ -1,7 +1,68 @@
 import { Box, Container, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
+import cIcon from '../assets/icon/c.svg';
+import cppIcon from '../assets/icon/c--4.svg';
+import javascriptIcon from '../assets/icon/javascript-1.svg';
+import typescriptIcon from '../assets/icon/typescript-2.svg';
+import reactIcon from '../assets/icon/react-2.svg';
+import javaIcon from '../assets/icon/java-4.svg';
+import springBootIcon from '../assets/icon/spring-boot-1.svg';
+import laravelIcon from '../assets/icon/laravel-2.svg';
+import flutterIcon from '../assets/icon/flutter-logo.svg';
+import dartIcon from '../assets/icon/dart.svg';
+import bootstrapIcon from '../assets/icon/bootstrap-5-1.svg';
+import mongodbIcon from '../assets/icon/mongodb-icon-1.svg';
+import mssqlIcon from '../assets/icon/microsoft-sql-server-1.svg';
+import gitIcon from '../assets/icon/git-icon.svg';
+import materialUiIcon from '../assets/icon/material-ui-1.svg';
+import azureIcon from '../assets/icon/azure-2.svg';
+import postmanIcon from '../assets/icon/postman.svg';
+import vscodeIcon from '../assets/icon/visual-studio-code-1.svg';
+import intellijIcon from '../assets/icon/intellij-idea-1.svg';
+import visualStudioIcon from '../assets/icon/visual-studio-2013.svg';
+import Pill from '../component/Pill';
+import GithubActivityCalendar from '../component/GithubActivityCalendar';
+
+type IconItem = {
+  label: string;
+  iconSrc: string;
+  iconAlt: string;
+};
+
+const PROFESSIONAL_SKILLSET: IconItem[] = [
+  { label: 'C', iconSrc: cIcon, iconAlt: 'C' },
+  { label: 'C#', iconSrc: cppIcon, iconAlt: 'C#' },
+  { label: 'Javascript', iconSrc: javascriptIcon, iconAlt: 'JavaScript' },
+  { label: 'Typescript', iconSrc: typescriptIcon, iconAlt: 'TypeScript' },
+  { label: 'React.Js', iconSrc: reactIcon, iconAlt: 'React' },
+  { label: 'Java', iconSrc: javaIcon, iconAlt: 'Java' },
+  { label: 'Spring Boot', iconSrc: springBootIcon, iconAlt: 'Spring Boot' },
+  { label: 'Laravel', iconSrc: laravelIcon, iconAlt: 'Laravel' },
+  { label: 'Flutter', iconSrc: flutterIcon, iconAlt: 'Flutter' },
+  { label: 'Dart', iconSrc: dartIcon, iconAlt: 'Dart' },
+  { label: 'Bootstrap', iconSrc: bootstrapIcon, iconAlt: 'Bootstrap' },
+  { label: 'Mongo DB', iconSrc: mongodbIcon, iconAlt: 'MongoDB' },
+  { label: 'Microsoft SQL Server', iconSrc: mssqlIcon, iconAlt: 'SQL Server' },
+  { label: 'Git', iconSrc: gitIcon, iconAlt: 'Git' },
+  { label: 'Material UI', iconSrc: materialUiIcon, iconAlt: 'Material UI' },
+  { label: 'Azure', iconSrc: azureIcon, iconAlt: 'Azure' },
+];
+
+const TOOLS_I_USE: IconItem[] = [
+  { label: 'VS Code', iconSrc: vscodeIcon, iconAlt: 'VS Code' },
+  { label: 'IntelliJ IDEA', iconSrc: intellijIcon, iconAlt: 'IntelliJ IDEA' },
+  { label: 'Visual Studio', iconSrc: visualStudioIcon, iconAlt: 'Visual Studio' },
+  { label: 'Postman', iconSrc: postmanIcon, iconAlt: 'Postman' },
+];
 const About = () => {
+  const hobbies = [
+    'Playing Games',
+    'Writing Tech Blogs',
+    'Traveling and Exploring New Places',
+  ];
+
   return (
     <Box
       sx={{
@@ -21,15 +82,8 @@ const About = () => {
           px: 2.5,
         }}
       >
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: '2fr 1fr' },
-            gap: { xs: 6, md: 8 },
-            alignItems: 'center',
-          }}
-        >
-          <Box>
+        <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
+          <Grid size={{ xs: 12, md: 8 }}>
             <Typography
               sx={{
                 fontFamily: '"PT Mono", monospace',
@@ -67,35 +121,39 @@ const About = () => {
               Outside of coding, I love engaging in activities that keep me creative and inspired:
             </Typography>
 
-            <Box
+            <Grid
+              container
+              direction="column"
+              rowSpacing={1.25}
               sx={{
                 mt: { xs: 3, md: 4 },
-                display: 'grid',
-                gap: 1.25,
-                justifyContent: { xs: 'center', md: 'start' },
+                alignItems: { xs: 'center', md: 'flex-start' },
               }}
             >
-              {[
-                'Playing Games',
-                'Writing Tech Blogs',
-                'Traveling and Exploring New Places',
-              ].map((text) => (
-                <Box
-                  key={text}
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1.25,
-                    color: 'rgba(255,255,255,0.92)',
-                    fontFamily: '"PT Mono", monospace',
-                    fontSize: { xs: '1rem', md: '1.1rem' },
-                  }}
-                >
-                  <ArrowRightAltIcon sx={{ color: '#c770f0' }} />
-                  <span>{text}</span>
-                </Box>
+              {hobbies.map((hobby) => (
+                <Grid key={hobby} size={12}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1,
+                      justifyContent: { xs: 'center', md: 'flex-start' },
+                    }}
+                  >
+                    <ArrowRightAltIcon sx={{ color: '#c770f0', fontSize: 20 }} />
+                    <Typography
+                      sx={{
+                        fontFamily: '"PT Mono", monospace',
+                        color: 'rgba(255,255,255,0.9)',
+                        fontSize: { xs: '1rem', md: '1.08rem' },
+                      }}
+                    >
+                      {hobby}
+                    </Typography>
+                  </Box>
+                </Grid>
               ))}
-            </Box>
+            </Grid>
 
             <Typography
               sx={{
@@ -119,26 +177,102 @@ const About = () => {
             >
               — Hieu
             </Typography>
-          </Box>
+          </Grid>
 
-          {/* Right Illustration */}
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Box
+                component="img"
+                src="https://undraw.co/api/illustrations/7a55cc8c-7dd5-4b37-9c4a-4e1e2c1fda47"
+                alt="about illustration"
+                sx={{
+                  maxWidth: { xs: '80%', md: '100%' },
+                  height: 'auto',
+                  filter: 'drop-shadow(0 0 30px rgba(199, 112, 240, 0.25))',
+                }}
+              />
+            </Box>
+          </Grid>
+        </Grid>
+
+        <Box sx={{ mt: { xs: 10, md: 12 } }}>
+          <Typography
+            sx={{
+              fontFamily: '"PT Mono", monospace',
+              fontWeight: 700,
+              textAlign: 'center',
+              letterSpacing: '0.03em',
+              fontSize: { xs: '2.2rem', md: '3.2rem' },
+              mb: { xs: 4, md: 5 },
+            }}
+          >
+            Professional <Box component="span" sx={{ color: '#c770f0' }}>Skillset</Box>
+          </Typography>
+
           <Box
             sx={{
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: { xs: 2, md: 2.5 },
             }}
           >
-            <Box
-              component="img"
-              src="https://undraw.co/api/illustrations/7a55cc8c-7dd5-4b37-9c4a-4e1e2c1fda47"
-              alt="about illustration"
-              sx={{
-                maxWidth: { xs: '80%', md: '100%' },
-                height: 'auto',
-                filter: 'drop-shadow(0 0 30px rgba(199, 112, 240, 0.25))',
-              }}
-            />
+            {PROFESSIONAL_SKILLSET.map((item) => (
+              <Pill key={item.label} label={item.label} iconSrc={item.iconSrc} iconAlt={item.iconAlt} />
+            ))}
+          </Box>
+        </Box>
+
+        <Box sx={{ mt: { xs: 8, md: 10 } }}>
+          <Typography
+            sx={{
+              fontFamily: '"PT Mono", monospace',
+              fontWeight: 700,
+              textAlign: 'center',
+              letterSpacing: '0.03em',
+              fontSize: { xs: '2.2rem', md: '3.2rem' },
+              mb: { xs: 4, md: 5 },
+            }}
+          >
+            <Box component="span" sx={{ color: '#c770f0' }}>Tools</Box> I use
+          </Typography>
+
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+              gap: { xs: 2, md: 2.5 },
+            }}
+          >
+            {TOOLS_I_USE.map((item) => (
+              <Pill key={item.label} label={item.label} iconSrc={item.iconSrc} iconAlt={item.iconAlt} />
+            ))}
+          </Box>
+        </Box>
+        
+        <Box sx={{ mt: { xs: 10, md: 12 } }}>
+          <Typography
+            sx={{
+              fontFamily: '"PT Mono", monospace',
+              fontWeight: 700,
+              textAlign: 'center',
+              letterSpacing: '0.03em',
+              fontSize: { xs: '2.2rem', md: '3.2rem' },
+              mb: { xs: 4, md: 5 },
+            }}
+          >
+            Days I <Box component="span" sx={{ color: '#c770f0' }}>Code</Box>
+          </Typography>
+
+          <Box sx={{ display: 'flex', justifyContent: 'center', px: { xs: 1, md: 0 } }}>
+            <GithubActivityCalendar username="ltchieu" />
           </Box>
         </Box>
       </Container>

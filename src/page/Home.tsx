@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Box, Container, IconButton, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -45,16 +46,14 @@ const Home = () => {
           py: 5,
         }}
       >
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: '2fr 1fr' },
-            alignItems: 'center',
-            width: '100%',
-          }}
+        <Grid
+          container
+          columnSpacing={{ xs: 0, md: 6 }}
+          rowSpacing={{ xs: 6, md: 0 }}
+          alignItems="center"
+          sx={{ width: '100%' }}
         >
-          {/* Left Content */}
-          <Box sx={{ color: 'white' }}>
+          <Grid size={{ xs: 12, md: 8 }} sx={{ color: 'white' }}>
             <Typography
               variant="h2"
               sx={{
@@ -103,10 +102,10 @@ const Home = () => {
                 }
               `}
             </style>
-          </Box>
+          </Grid>
 
-          {/* Right Illustration */}
-          <Box
+          <Grid
+            size={{ xs: 12, md: 4 }}
             sx={{
               display: 'flex',
               justifyContent: 'center',
@@ -124,8 +123,8 @@ const Home = () => {
                 filter: 'drop-shadow(0 0 30px rgba(199, 112, 240, 0.3))',
               }}
             />
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </Container>
 
       {/* Introduce Section */}
@@ -138,15 +137,8 @@ const Home = () => {
           py: { xs: 8, md: 10 },
         }}
       >
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: '2fr 1fr' },
-            gap: { xs: 6, md: 8 },
-            alignItems: 'center',
-          }}
-        >
-          <Box>
+        <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
+          <Grid size={{ xs: 12, md: 8 }}>
             <Typography
               variant="h3"
               sx={{
@@ -184,18 +176,20 @@ const Home = () => {
               <Box component="span" sx={highlightSx}>Web Applications</Box>, learning system design,
               and continuously improving performance and UX.
             </Typography>
-          </Box>
 
-          <Box
+          </Grid>
+
+          <Grid
+            size={{ xs: 12, md: 4 }}
             sx={{
-              display: 'grid',
-              placeItems: 'center',
+              display: 'flex',
+              justifyContent: 'center',
               order: { xs: -1, md: 0 },
             }}
           >
             <TiltImage src={avatarSvg} alt="Avatar" size={{ xs: 200, md: 260 }} />
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </Container>
 
       {/* Find Me On */}
