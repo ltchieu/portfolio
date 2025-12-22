@@ -11,9 +11,9 @@ const AppRoute = () => {
     <Routes>
       <Route element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="projects" element={<Projects />} />
-        <Route path="resume" element={<Resume />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/resume" element={<Resume />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
