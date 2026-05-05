@@ -5,7 +5,7 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import DownloadIcon from '@mui/icons-material/Download';
 
-import pdfUrl from '../assets/file/2001221414.pdf';
+import pdfUrl from '../assets/file/Le Truong Cong Hieu - Internship Software Developer.pdf';
 
 const Resume = () => {
   const defaultLayout = defaultLayoutPlugin();
