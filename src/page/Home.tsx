@@ -1,283 +1,53 @@
-import { useMemo } from 'react';
-import { Box, Container, IconButton, Typography } from '@mui/material';
-import Grid from '@mui/material/Grid';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import avatarSvg from '../assets/avatar.svg';
-import TiltImage from '../component/TiltImage';
-import TypeWriter from '../component/TypeWriter';
+import CharacterModel from "../component/Character";
+import NavbarHome from "../component/Navbar";
+import { LoadingProvider } from "../context/LoadingProvider";
+import SocialIconsHome from "../component/SocialIconHome";
+
+const HomeContent = () => {
+  return (
+    <div className="container-main w-full mx-auto relative">
+      <NavbarHome />
+      <SocialIconsHome />
+      <div className="landing-section relative mx-auto w-full max-w-[100vw] h-auto min-h-screen box-border flex flex-col px-[15px] pb-[40px] min-[769px]:max-w-[var(--cMaxWidth)] min-[769px]:h-[var(--vh)] min-[769px]:min-h-0 min-[769px]:block min-[769px]:p-0" id="landingDiv">
+        <div className="landing-container relative mx-auto w-full max-w-[100vw] h-auto min-h-screen box-border flex flex-col px-[15px] pb-[40px] min-[769px]:w-[var(--cWidth)] min-[769px]:max-w-[var(--cMaxWidth)] min-[769px]:h-full min-[769px]:min-h-0 min-[769px]:block min-[769px]:p-0">
+          <div className="landing-intro relative pt-[40px] mb-[20px] z-10 text-center w-full order-1 h-auto min-[769px]:absolute min-[769px]:top-[5%] min-[769px]:left-0 min-[769px]:text-center min-[769px]:w-full min-[769px]:order-none min-[769px]:pt-0 min-[769px]:mb-0 min-[1025px]:top-[40%] min-[1025px]:left-auto min-[1025px]:right-[66%] min-[1200px]:right-[70%] min-[1025px]:-translate-y-1/2 min-[1025px]:text-left min-[1025px]:w-auto min-[1025px]:translate-x-0">
+            <h2 className="m-0 text-[var(--accentColor)] font-light tracking-[2px] block w-auto text-[22px] min-[500px]:text-[18px] min-[769px]:text-[25px] min-[1600px]:text-[35px] text-center min-[1025px]:text-left">Hello! I'm</h2>
+            <h1 className="m-0 tracking-[2px] font-medium font-['Geist',sans-serif] text-[28px] leading-[28px] min-[500px]:text-[30px] min-[500px]:leading-[30px] min-[769px]:text-[40px] min-[769px]:leading-[35px] min-[1600px]:text-[60px] min-[1600px]:leading-[55px]">
+              LE TRUONG
+              <br className="block mb-[5px]" />
+              <span> CONG HIEU</span>
+            </h1>
+          </div>
+          <div className="landing-info relative mt-[20px] z-10 bg-transparent pb-[50px] flex flex-col items-center gap-[10px] h-auto w-full order-3 text-center min-[769px]:absolute min-[769px]:bottom-[40px] min-[769px]:right-1/2 min-[769px]:translate-x-1/2 min-[769px]:top-auto min-[769px]:left-auto min-[769px]:w-full min-[769px]:order-none min-[1025px]:bottom-auto min-[1025px]:top-[51%] min-[1025px]:left-[66%] min-[1200px]:left-[70%] min-[1025px]:right-auto min-[1025px]:translate-x-0 min-[1025px]:-translate-y-1/2 min-[1025px]:mt-0 min-[1025px]:pb-0 min-[1025px]:block min-[1025px]:w-auto min-[1025px]:text-left">
+            <h3 className="m-0 text-[var(--accentColor)] font-light tracking-[2px] hidden min-[769px]:block min-[769px]:text-[25px] min-[1600px]:text-[35px] min-[1025px]:text-left">An</h3>
+            <h2 className="landing-info-h2 m-0 text-[#c481ff] font-semibold font-['Geist',sans-serif] relative block w-auto text-[20px] leading-[1.5] text-center min-[769px]:w-[150%] min-[769px]:ml-[-5px] min-[769px]:text-[36px] min-[769px]:leading-none min-[769px]:h-auto min-[769px]:after:content-[''] min-[769px]:after:absolute min-[769px]:after:w-full min-[769px]:after:h-[120%] min-[769px]:after:z-[3] min-[769px]:after:bg-gradient-to-t min-[769px]:after:from-[var(--backgroundColor)] min-[769px]:after:from-40% min-[769px]:after:to-transparent min-[769px]:after:to-110% min-[769px]:after:top-0 min-[769px]:after:left-0 min-[1025px]:text-[55px] min-[1600px]:text-[75px] min-[1025px]:text-left">
+              <div className="landing-h2-1 block w-auto m-0 text-[24px] font-bold text-[var(--accentColor)] leading-[1.5] text-center min-[769px]:text-[36px] min-[769px]:font-semibold min-[769px]:text-[#c481ff] min-[769px]:text-left min-[769px]:leading-none min-[1025px]:text-[45px] min-[1200px]:text-[45px] min-[1600px]:text-[65px]">Software Developer</div>
+              <div className="landing-h2-2 block w-auto m-0 text-[20px] leading-[1.5] text-center absolute top-0 left-0 right-0 min-[769px]:right-auto min-[769px]:left-auto min-[769px]:text-left min-[769px]:leading-none min-[769px]:whitespace-nowrap min-[1025px]:text-[45px] min-[1200px]:text-[45px] min-[1600px]:text-[65px] opacity-0">C#/.NET Developer</div>
+            </h2>
+            <h2 className="m-0 font-semibold font-['Geist',sans-serif] relative flex flex-wrap uppercase tracking-[2px] text-center justify-center min-[769px]:justify-start min-[769px]:ml-[20px] min-[769px]:-mt-[20px] block w-auto text-[20px] leading-[1.5] min-[769px]:text-[28px] min-[769px]:leading-[40px] min-[769px]:whitespace-nowrap min-[769px]:text-left min-[1025px]:text-[45px] min-[1025px]:leading-[42px] min-[1600px]:text-[65px] min-[1600px]:leading-[62px]">
+              <div className="landing-h2-info block w-auto m-0 text-[18px] text-[rgba(255,255,255,0.9)] leading-[1.5] text-center min-[769px]:text-[28px] min-[769px]:text-left min-[769px]:leading-none min-[769px]:whitespace-nowrap min-[1025px]:text-[45px] min-[1600px]:text-[65px]">Back-End Developer</div>
+              <div className="landing-h2-info-1 block w-auto m-0 text-[20px] leading-[1.5] text-center absolute top-0 left-0 right-0 min-[769px]:right-auto min-[769px]:left-auto min-[769px]:text-left min-[769px]:leading-none min-[769px]:whitespace-nowrap min-[1025px]:text-[45px] min-[1600px]:text-[65px] opacity-0">Java Developer</div>
+            </h2>
+          </div>
+          {/* Mobile photo - shows only on mobile when 3D character is hidden */}
+          <div className="mobile-photo block relative w-full max-w-[380px] mx-auto z-1 order-2 min-[769px]:hidden pointer-events-none [mask-image:linear-gradient(to_bottom,black_85%,transparent_100%)]">
+            <img src="/images/mypicnbg.png" alt="Lê Trương Công Hiếu" className="w-full h-auto object-contain drop-shadow-[0_0_40px_rgba(194,164,255,0.4)]" />
+          </div>
+        </div>
+      </div>
+      <CharacterModel />
+      <div className="landing-circle1 fixed top-0 left-0 z-15 w-[300px] h-[300px] bg-[#fb8dff] shadow-[inset_-50px_40px_50px_rgba(84,0,255,0.6)] blur-[60px] rounded-full animate-[loadingCircle_5s_linear_infinite]"></div>
+      <div className="landing-circle2 hidden md:block fixed top-1/2 right-0 translate-x-[calc(100%-2px)] -translate-y-1/2 z-9 w-[300px] h-[300px] bg-[#fb8dff] shadow-[inset_-50px_40px_50px_rgba(84,0,255,0.6)] blur-[50px] rounded-full animate-[loadingCircle2_5s_linear_infinite]"></div>
+      <div className="nav-fade fixed top-0 w-full h-[130px] bg-gradient-to-t from-[var(--backgroundColor)] from-70% to-transparent pointer-events-none z-12 opacity-0 left-0"></div>
+    </div>
+  );
+};
 
 const Home = () => {
-  const highlightSx = useMemo(
-    () => ({ color: '#c770f0', fontWeight: 700, fontStyle: 'italic' }),
-    []
-  );
-
-  const socialLinks = useMemo(
-    () => [
-      { label: 'GitHub', href: 'https://github.com/ltchieu', icon: <GitHubIcon /> },
-      { label: 'Facebook', href: 'https://www.facebook.com/conghiu04', icon: <FacebookIcon /> },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/letruongconghieu/', icon: <LinkedInIcon /> },
-      { label: 'Instagram', href: 'https://www.instagram.com/ltc.hiu/', icon: <InstagramIcon /> },
-    ],
-    []
-  );
-
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        backgroundColor: 'transparent',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-    >
-      <Container
-        maxWidth="lg"
-        disableGutters
-        sx={{
-          position: 'relative',
-          zIndex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          minHeight: 'calc(100vh - 160px)',
-          py: 5,
-        }}
-      >
-        <Grid
-          container
-          columnSpacing={{ xs: 0, md: 6 }}
-          rowSpacing={{ xs: 6, md: 0 }}
-          alignItems="center"
-          sx={{ width: '100%' }}
-        >
-          <Grid size={{ xs: 12, md: 8 }} sx={{ color: 'white' }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontFamily: '"Poppins", sans-serif',
-                fontSize: { xs: '2.5rem', md: '3.5rem' },
-                fontWeight: 400,
-                mb: 2,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 2,
-              }}
-            >
-              Hi There!{' '}
-              <span style={{ display: 'inline-block', animation: 'wave 1.5s infinite' }}>
-                👋
-              </span>
-            </Typography>
-
-            <Typography
-              variant="h1"
-              sx={{
-                fontFamily: '"PT Mono", monospace',
-                fontSize: { xs: '2rem', md: '3rem' },
-                fontWeight: 700,
-                mb: 8,
-              }}
-            >
-              I'M <span style={{ color: '#c770f0' }}>Lê Trương Công Hiếu</span>
-            </Typography>
-
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 3 }}>
-              <TypeWriter phrases={['Software Developer', 'Knowledge is power.']} />
-            </Box>
-
-            <style>
-              {`
-                @keyframes wave {
-                  0% { transform: rotate(0deg); }
-                  10% { transform: rotate(14deg); }
-                  20% { transform: rotate(-8deg); }
-                  30% { transform: rotate(14deg); }
-                  40% { transform: rotate(-4deg); }
-                  50% { transform: rotate(10deg); }
-                  60% { transform: rotate(0deg); }
-                  100% { transform: rotate(0deg); }
-                }
-              `}
-            </style>
-          </Grid>
-
-          <Grid
-            size={{ xs: 12, md: 4 }}
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              mt: { xs: 5, md: 0 },
-            }}
-          >
-            <Box
-              component="img"
-              src="https://raw.githubusercontent.com/soumyajit4419/Portfolio/master/src/Assets/home-main.svg"
-              alt="home pic"
-              sx={{
-                maxWidth: { xs: '75%', md: '100%' },
-                height: 'auto',
-                filter: 'drop-shadow(0 0 30px rgba(199, 112, 240, 0.3))',
-              }}
-            />
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/* Introduce Section */}
-      <Container
-        maxWidth="lg"
-        disableGutters
-        sx={{
-          position: 'relative',
-          zIndex: 1,
-          py: { xs: 8, md: 10 },
-        }}
-      >
-        <Grid container spacing={{ xs: 6, md: 8 }} alignItems="center">
-          <Grid size={{ xs: 12, md: 8 }}>
-            <Typography
-              variant="h3"
-              sx={{
-                fontFamily: '"PT Mono", monospace',
-                fontWeight: 700,
-                textAlign: "center",
-                letterSpacing: '0.03em',
-                fontSize: { xs: '1.8rem', md: '2.7rem' },
-                mb: 3,
-              }}
-            >
-              LET ME <span style={{ color: '#c770f0' }}>INTRODUCE</span> MYSELF
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: '"PT Mono", monospace',
-                color: 'rgba(255,255,255,0.92)',
-                lineHeight: 1.9,
-                fontSize: { xs: '1.05rem', md: '1.4rem' },
-                textAlign: { xs: 'center', md: 'left' },
-              }}
-            >
-              I am a responsible, sociable, and proactive individual in my work, always ready to
-              learn new knowledge. Through several academic projects, I have gained experience in
-              teamwork and specialized knowledge in{' '}
-              <Box component="span" sx={highlightSx}>
-                Back-End Development
-              </Box>
-              .
-              <br />
-              <br />
-              I have hands-on experience with{' '}
-              <Box component="span" sx={highlightSx}>
-                Java
-              </Box>{' '}
-              and{' '}
-              <Box component="span" sx={highlightSx}>
-                C#/.NET
-              </Box>
-              .
-              <br />
-              <br />
-              In the next 1-3 years, my goal is to become a professional{' '}
-              <Box component="span" sx={highlightSx}>
-                Back-End Developer
-              </Box>
-              , proficient in building{' '}
-              <Box component="span" sx={highlightSx}>
-                complex data management systems
-              </Box>{' '}
-              and effectively optimizing processing performance.
-            </Typography>
-
-          </Grid>
-
-          <Grid
-            size={{ xs: 12, md: 4 }}
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              order: { xs: -1, md: 0 },
-            }}
-          >
-            <TiltImage src={avatarSvg} alt="Avatar" size={{ xs: 200, md: 260 }} />
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/* Find Me On */}
-      <Container
-        maxWidth="lg"
-        disableGutters
-        sx={{
-          position: 'relative',
-          zIndex: 1,
-          py: { xs: 8, md: 10 },
-        }}
-      >
-        <Box sx={{ textAlign: 'center' }}>
-          <Typography
-            sx={{
-              fontFamily: '"PT Mono", monospace',
-              fontWeight: 700,
-              letterSpacing: '0.03em',
-              fontSize: { xs: '2.1rem', md: '3rem' },
-              mb: 1.5,
-            }}
-          >
-            Find Me On
-          </Typography>
-
-          <Typography
-            sx={{
-              fontFamily: '"PT Mono", monospace',
-              color: 'rgba(255,255,255,0.85)',
-              fontSize: { xs: '1rem', md: '1.1rem' },
-              mb: 3.5,
-            }}
-          >
-            Feel free to <Box component="span" sx={{ color: '#c770f0' }}>connect</Box> with me
-          </Typography>
-
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: { xs: 2, md: 3 },
-              flexWrap: 'wrap',
-            }}
-          >
-            {socialLinks.map((item) => (
-              <IconButton
-                key={item.label}
-                component="a"
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={item.label}
-                sx={{
-                  width: 46,
-                  height: 46,
-                  backgroundColor: 'rgba(255,255,255,0.95)',
-                  color: '#6f2dbd',
-                  transition: 'transform 180ms ease, background-color 180ms ease, color 180ms ease',
-                  '&:hover': {
-                    backgroundColor: 'rgba(255,255,255,1)',
-                    color: '#c770f0',
-                    transform: 'translateY(-2px)',
-                  },
-                }}
-              >
-                {item.icon}
-              </IconButton>
-            ))}
-          </Box>
-        </Box>
-      </Container>
-    </Box>
+    <LoadingProvider>
+      <HomeContent />
+    </LoadingProvider>
   );
 };
 
