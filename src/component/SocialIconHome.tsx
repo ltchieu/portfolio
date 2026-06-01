@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
-import { FaGithub, FaLinkedinIn, FaFacebookF, FaInstagram, FaRegFilePdf } from "react-icons/fa6";
-import HoverLinks from "./HoverLinks";
+import { FaGithub, FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa6";
 
 const SocialIconsHome = () => {
     const socialRef = useRef<HTMLDivElement>(null);
@@ -84,12 +83,7 @@ const SocialIconsHome = () => {
                     </a>
                 </span>
             </div>
-            <a className="resume-button absolute z-[99] flex gap-[5px] bottom-[40px] right-0 w-auto whitespace-nowrap tracking-[4px] text-[15px] leading-[15px] md:text-[20px] md:leading-[20px] font-semibold text-[#5e5e5e] cursor-pointer transition-all duration-500 origin-bottom-left translate-x-full md:translate-x-0 -rotate-90 md:rotate-0 hover:text-white group/resume" href="/resume">
-                <HoverLinks text="RESUME" />
-                <span className="text-white text-[17px] md:text-[23px] -mt-[1px] md:-mt-[1.5px] flex items-center group-hover/resume:text-white">
-                    <FaRegFilePdf />
-                </span>
-            </a>
+
         </div>
     );
 }

@@ -1,0 +1,41 @@
+import "./styles/Career.css";
+import { experiences } from "../data/careerData";
+
+const getDisplayYear = (period: string) => {
+  if (period.includes("Present")) return "NOW";
+  // Extract year from formats like "07/2025"
+  const match = period.match(/\b(20\d{2})\b/);
+  return match ? match[1] : period;
+};
+
+const Career = () => {
+  return (
+    <div className="career-section section-container" id="career">
+      <div className="career-container">
+        <h2>
+          My education <span>&</span>
+          <br /> experience
+        </h2>
+        <div className="career-info">
+          <div className="career-timeline">
+            <div className="career-dot"></div>
+          </div>
+          {experiences.map((exp, index) => (
+            <div key={index} className="career-info-box">
+              <div className="career-info-in">
+                <div className="career-role">
+                  <h4>{exp.position}</h4>
+                  <h5>{exp.company}</h5>
+                </div>
+                <h3>{getDisplayYear(exp.period)}</h3>
+              </div>
+              <p>{exp.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Career;

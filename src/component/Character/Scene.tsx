@@ -145,6 +145,7 @@ const Scene = () => {
 
       return () => {
         isMounted = false;
+        progress.clear();
         clearTimeout(debounce);
         cancelAnimationFrame(animationFrameId);
         scene.clear();

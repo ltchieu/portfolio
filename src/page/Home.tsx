@@ -1,9 +1,22 @@
+import { useEffect } from "react";
 import CharacterModel from "../component/Character";
 import NavbarHome from "../component/Navbar";
 import { LoadingProvider } from "../context/LoadingProvider";
 import SocialIconsHome from "../component/SocialIconHome";
+import About from "./About";
+import WhatIDo from "../component/WhatIDo";
+import Career from "../component/Career";
+import Work from "../component/Work";
+import TechStack from "../component/TechStack";
+import GithubActivityCalendar from "../component/GithubActivityCalendar";
+import Contact from "../component/Contact";
+import setSplitText from "../component/utils/splitText";
 
 const HomeContent = () => {
+  useEffect(() => {
+    setSplitText();
+  }, []);
+
   return (
     <div className="container-main w-full mx-auto relative">
       <NavbarHome />
@@ -20,7 +33,7 @@ const HomeContent = () => {
           </div>
           <div className="landing-info relative mt-[20px] z-10 bg-transparent pb-[50px] flex flex-col items-center gap-[10px] h-auto w-full order-3 text-center min-[769px]:absolute min-[769px]:bottom-[40px] min-[769px]:right-1/2 min-[769px]:translate-x-1/2 min-[769px]:top-auto min-[769px]:left-auto min-[769px]:w-full min-[769px]:order-none min-[1025px]:bottom-auto min-[1025px]:top-[51%] min-[1025px]:left-[66%] min-[1200px]:left-[70%] min-[1025px]:right-auto min-[1025px]:translate-x-0 min-[1025px]:-translate-y-1/2 min-[1025px]:mt-0 min-[1025px]:pb-0 min-[1025px]:block min-[1025px]:w-auto min-[1025px]:text-left">
             <h3 className="m-0 text-[var(--accentColor)] font-light tracking-[2px] hidden min-[769px]:block min-[769px]:text-[25px] min-[1600px]:text-[35px] min-[1025px]:text-left">An</h3>
-            <h2 className="landing-info-h2 m-0 text-[#c481ff] font-semibold font-['Geist',sans-serif] relative block w-auto text-[20px] leading-[1.5] text-center min-[769px]:w-[150%] min-[769px]:ml-[-5px] min-[769px]:text-[36px] min-[769px]:leading-none min-[769px]:h-auto min-[769px]:after:content-[''] min-[769px]:after:absolute min-[769px]:after:w-full min-[769px]:after:h-[120%] min-[769px]:after:z-[3] min-[769px]:after:bg-gradient-to-t min-[769px]:after:from-[var(--backgroundColor)] min-[769px]:after:from-40% min-[769px]:after:to-transparent min-[769px]:after:to-110% min-[769px]:after:top-0 min-[769px]:after:left-0 min-[1025px]:text-[55px] min-[1600px]:text-[75px] min-[1025px]:text-left">
+            <h2 className="landing-info-h2 m-0 text-[#c481ff] font-semibold font-['Geist',sans-serif] relative block w-auto text-[20px] leading-[1.5] text-center min-[769px]:w-[150%] min-[769px]:ml-[-5px] min-[769px]:text-[36px] min-[769px]:leading-none min-[769px]:after:content-[''] min-[769px]:after:absolute min-[769px]:after:w-full min-[769px]:after:h-[120%] min-[769px]:after:z-[3] min-[769px]:after:bg-gradient-to-t min-[769px]:after:from-[var(--backgroundColor)] min-[769px]:after:from-40% min-[769px]:after:to-transparent min-[769px]:after:to-110% min-[769px]:after:top-0 min-[769px]:after:left-0 min-[1025px]:text-[55px] min-[1600px]:text-[75px] min-[1025px]:text-left">
               <div className="landing-h2-1 block w-auto m-0 text-[24px] font-bold text-[var(--accentColor)] leading-[1.5] text-center min-[769px]:text-[36px] min-[769px]:font-semibold min-[769px]:text-[#c481ff] min-[769px]:text-left min-[769px]:leading-none min-[1025px]:text-[45px] min-[1200px]:text-[45px] min-[1600px]:text-[65px]">Software Developer</div>
               <div className="landing-h2-2 block w-auto m-0 text-[20px] leading-[1.5] text-center absolute top-0 left-0 right-0 min-[769px]:right-auto min-[769px]:left-auto min-[769px]:text-left min-[769px]:leading-none min-[769px]:whitespace-nowrap min-[1025px]:text-[45px] min-[1200px]:text-[45px] min-[1600px]:text-[65px] opacity-0">C#/.NET Developer</div>
             </h2>
@@ -35,10 +48,23 @@ const HomeContent = () => {
           </div>
         </div>
       </div>
+      <About />
+      <WhatIDo />
+      <Career />
+      <Work />
+      <TechStack />
+      <div className="github-section section-container" id="github-contributions">
+        <h2>
+          GitHub <span>Contributions</span>
+        </h2>
+        <GithubActivityCalendar />
+      </div>
+      <Contact />
       <CharacterModel />
+
       <div className="landing-circle1 fixed top-0 left-0 z-15 w-[300px] h-[300px] bg-[#fb8dff] shadow-[inset_-50px_40px_50px_rgba(84,0,255,0.6)] blur-[60px] rounded-full animate-[loadingCircle_5s_linear_infinite]"></div>
       <div className="landing-circle2 hidden md:block fixed top-1/2 right-0 translate-x-[calc(100%-2px)] -translate-y-1/2 z-9 w-[300px] h-[300px] bg-[#fb8dff] shadow-[inset_-50px_40px_50px_rgba(84,0,255,0.6)] blur-[50px] rounded-full animate-[loadingCircle2_5s_linear_infinite]"></div>
-      <div className="nav-fade fixed top-0 w-full h-[130px] bg-gradient-to-t from-[var(--backgroundColor)] from-70% to-transparent pointer-events-none z-12 opacity-0 left-0"></div>
+      <div className="nav-fade"></div>
     </div>
   );
 };
